@@ -2,8 +2,8 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "KonKon.AI Film Festival" },
+    { name: "KonKon.AI", content: "A global celebration of AI-powered storytelling, showcasing innovative films, music videos, and trailers created with cutting-edge technology. Where creativity meets the future of cinema." },
   ];
 };
 
@@ -12,8 +12,8 @@ export default function Index() {
     <div className="flex h-screen items-center justify-center">
       <div className="flex flex-col items-center gap-16">
         <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
-            Welcome to <span className="sr-only">Remix</span>
+          <h1 className="font-secondary leading text-2xl font-bold text-gray-800 dark:text-gray-100">
+            Hello to <span className="sr-only">Remix</span>
           </h1>
           <div className="h-[144px] w-[434px]">
             <img

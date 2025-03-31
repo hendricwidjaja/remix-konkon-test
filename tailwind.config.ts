@@ -5,6 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        primary: ['"OCR A Extended"', 'sans-serif'], 
+        secondary: ['"ETHNOCENTRIC"', 'sans-serif'],   
         sans: [
           "Inter",
           "ui-sans-serif",

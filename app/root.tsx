@@ -4,8 +4,12 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunction } from "@remix-run/node";
+import { getGlobalData } from "./data.server";
+import Header from "~/components/Header"; // Import the Header component
+import Footer from "~/components/Footer"; // Import the Footer component
 
 import "./tailwind.css";
 
@@ -21,6 +25,12 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+
+export const loader: LoaderFunction = async () => {
+  const globalData = await getGlobalData();
+  const strapiUrl = process.env.STRAPI_URL || "http://127.0.0.1:1337";
+  return Response.json({ globalData, strapiUrl });
+};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -41,5 +51,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  const { globalData, strapiUrl } = useLoaderData<{
+    globalData: any;
+    strapiUrl: string;
+  }>();
+
+  return (
+    <Layout>
+      <Header data={globalData.header} strapiUrl={strapiUrl} />
+      <Outlet />
+      <Footer data={globalData.footer} strapiUrl={strapiUrl} />
+    </Layout>
+  );
 }
