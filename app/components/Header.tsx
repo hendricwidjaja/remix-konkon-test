@@ -8,7 +8,7 @@ export default function Header({ data, strapiUrl }) {
           <img
             src={`${strapiUrl}${data.logo.image.url}`}
             alt={data.logo.image.alternativeText || data.logo.label}
-            className="h-8 w-auto"
+            className="h-12 w-auto"
           />
         </a>
         {/* Navigation Items */}
@@ -46,7 +46,7 @@ export default function Header({ data, strapiUrl }) {
         {/* CTA Button */}
         <a
           href={data.cta.href}
-          className="px-4 py-2 border-[1px] border-[#EA41F7] bg-black font-primary text-white hover:bg-gray-900 border-solid rounded-xl"
+          className="px-4 py-1 border-[1px] border-[#EA41F7] bg-black font-primary text-white hover:bg-gray-900 border-solid rounded-lg"
         >
           {data.cta.label}
         </a>
