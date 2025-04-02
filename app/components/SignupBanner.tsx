@@ -12,9 +12,9 @@ interface SignupBannerProps {
 
 export default function SignupBanner({ signupLink, logoLink }: SignupBannerProps) {
   return (
-    <section className="py-12 bg-gray-800 text-white text-center">
+    <section className="py-12 bg-black text-white text-center">
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-        <a href={signupLink.href} className="text-2xl font-bold underline">
+        <a href={signupLink.href} className="text-4xl font-secondary font-bold">
           {signupLink.label}
         </a>
         <a href={logoLink.href}>
