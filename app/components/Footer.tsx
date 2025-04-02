@@ -1,3 +1,5 @@
+import { buildImageUrl } from '~/utils/urlHelpers';
+
 export default function Footer({ data, strapiUrl }) {
   return (
     <footer className="bg-black text-white py-8 px-8">
@@ -6,7 +8,7 @@ export default function Footer({ data, strapiUrl }) {
         <div className="flex items-center gap-10">
           <a href={data.logo.href} className="flex items-center mb-4 md:mb-0">
             <img
-              src={`${strapiUrl}${data.logo.image.url}`}
+              src={buildImageUrl(strapiUrl, data.logo.image.url)}
               alt={data.logo.image.alternativeText || data.logo.label}
               className="h-16 w-auto"
             />
@@ -34,7 +36,7 @@ export default function Footer({ data, strapiUrl }) {
               rel="noreferrer"
             >
               <img
-                src={`${strapiUrl}${link.image.url}`}
+                src={buildImageUrl(strapiUrl, link.image.url)}
                 alt={link.image.alternativeText || link.label}
                 className="h-5 w-5"
               />

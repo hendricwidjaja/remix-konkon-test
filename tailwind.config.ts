@@ -4,6 +4,10 @@ export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        aquaKonkon: '#63DCDD',
+        pinkKonkon: '#EA41F7'
+      },
       fontFamily: {
         primary: ['"OCR A Extended"', 'sans-serif'], 
         secondary: ['"ETHNOCENTRIC"', 'sans-serif'],   

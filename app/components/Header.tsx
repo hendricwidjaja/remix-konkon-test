@@ -1,3 +1,5 @@
+import { buildImageUrl } from '~/utils/urlHelpers';
+
 export default function Header({ data, strapiUrl }) {
   return (
     <header className="bg-black text-white py-4 px-6 flex items-center justify-between">
@@ -6,7 +8,7 @@ export default function Header({ data, strapiUrl }) {
         {/* Logo */}
         <a href={data.logo.href} className="flex items-center">
           <img
-            src={`${strapiUrl}${data.logo.image.url}`}
+            src={buildImageUrl(strapiUrl, data.logo.image.url)}
             alt={data.logo.image.alternativeText || data.logo.label}
             className="h-12 w-auto"
           />
@@ -36,7 +38,7 @@ export default function Header({ data, strapiUrl }) {
               rel="noreferrer"
             >
               <img
-                src={`${strapiUrl}${link.image.url}`}
+                src={buildImageUrl(strapiUrl, link.image.url)}
                 alt={link.image.alternativeText || link.label}
                 className="h-6 w-6"
               />
@@ -46,7 +48,7 @@ export default function Header({ data, strapiUrl }) {
         {/* CTA Button */}
         <a
           href={data.cta.href}
-          className="px-4 py-1 border-[1px] border-[#EA41F7] bg-black font-primary text-white hover:bg-gray-900 border-solid rounded-lg"
+          className="px-4 py-1 border-[1px] border-pinkKonkon bg-black font-primary text-white hover:bg-gray-900 border-solid rounded-lg"
         >
           {data.cta.label}
         </a>

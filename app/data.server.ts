@@ -76,3 +76,23 @@ export async function getGlobalData() {
     throw error;
   }
 }
+
+/**
+ * Fetches homepage data (hero, sponsors, story categories) from Strapi,
+ * flattens it, and returns the result.
+ */
+export async function getLandingPageData() {
+  try {
+    const response = await fetch(strapiBaseUrl + "/api/landing-page");
+    const data = await response.json();
+
+    // Flatten the data returned by Strapi
+    const landingPageData = flattenAttributes(data.data);
+    console.dir(landingPageData, { depth: null });
+
+    return landingPageData;
+  } catch (error) {
+    console.error("Error fetching landing page data", error);
+    throw error;
+  }
+}

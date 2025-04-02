@@ -59,7 +59,7 @@ export default function App() {
   return (
     <Layout>
       <Header data={globalData.header} strapiUrl={strapiUrl} />
-      <Outlet />
+        <Outlet />
       <Footer data={globalData.footer} strapiUrl={strapiUrl} />
     </Layout>
   );
