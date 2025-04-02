@@ -1,3 +1,5 @@
+import { buildImageUrl } from '~/utils/urlHelpers';
+
 interface Category {
   id: number;
   heading: string;
@@ -31,7 +33,7 @@ export default function StoryCategoriesSection({
             } items-center gap-6`}
           >
             <img
-              src={`${strapiUrl}${category.image.url}`}
+              src={buildImageUrl(strapiUrl, category.image.url)}
               alt={category.image.alternativeText || category.heading}
               className="w-full md:w-1/2 rounded-lg shadow-lg"
             />

@@ -9,7 +9,7 @@ export default function ParallaxBanner({ imageUrl, altText }: ParallaxBannerProp
       className="w-full h-64 bg-cover bg-fixed bg-center"
       style={{ backgroundImage: `url(${imageUrl})` }}
       role="img"
-      aria-label={altText || "Parallax Banner"}
+      aria-label={altText || "Parallax Batman Banner"}
     ></div>
   );
 }
