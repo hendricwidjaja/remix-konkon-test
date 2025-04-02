@@ -3,6 +3,9 @@ import { useLoaderData } from "@remix-run/react";
 import { getLandingPageData } from "~/data.server";
 import HeroSection from "~/components/HeroSection";
 import SponsorsSection from "~/components/SponsorsSection";
+import ParallaxBanner from "~/components/ParallaxBanner";
+import StoryCategoriesSection from "~/components/StoryCategoriesSection";
+import SignupBanner from "~/components/SignupBanner";
 
 export const meta: MetaFunction = () => {
   return [
@@ -30,6 +33,15 @@ export default function Index() {
   const sponsorsBlock = blocks.filter(
     (block: any) => block.__component === "blocks.sponsors"
   );
+  const parallaxBannerBlock = blocks.find(
+    (block: any) => block.__component === "blocks.parallax-banner"
+  );
+  const storyCategoriesBlock = blocks.find(
+    (block: any) => block.__component === "blocks.story-categories"
+  );
+  const signupBannerBlock = blocks.find(
+    (block: any) => block.__component === "blocks.signup-banner"
+  );
 
   if (!heroBlock) {
     console.error("Hero block is missing from the data.");
@@ -52,6 +64,29 @@ export default function Index() {
           strapiUrl={strapiUrl}
         />
       ))}
+      {parallaxBannerBlock && (
+        <ParallaxBanner
+          imageUrl={`${strapiUrl}${parallaxBannerBlock.parallaxBanner.url}`}
+          altText={parallaxBannerBlock.parallaxBanner.alternativeText}
+        />
+      )}
+      {storyCategoriesBlock && (
+        <StoryCategoriesSection
+          heading={storyCategoriesBlock.heading}
+          categories={storyCategoriesBlock.category}
+          strapiUrl={strapiUrl}
+        />
+      )}
+      {signupBannerBlock && (
+        <SignupBanner
+          signupLink={signupBannerBlock.signupLink}
+          logoLink={{
+            href: signupBannerBlock.logoLink.href,
+            imageUrl: `${strapiUrl}${signupBannerBlock.logoLink.image.url}`,
+            altText: signupBannerBlock.logoLink.image.alternativeText,
+          }}
+        />
+      )}
     </div>
   );
 }
