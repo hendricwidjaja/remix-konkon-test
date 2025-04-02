@@ -6,7 +6,10 @@ export default {
     extend: {
       colors: {
         aquaKonkon: '#63DCDD',
-        pinkKonkon: '#EA41F7'
+        pinkKonkon: '#EA41F7',
+        goldKonkon: '#FFD700',
+        silverKonkon: 'C0C0C0',
+        bronzeKonkon: '#CD7F32'
       },
       fontFamily: {
         primary: ['"OCR A Extended"', 'sans-serif'], 
