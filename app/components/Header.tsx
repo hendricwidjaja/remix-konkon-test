@@ -26,7 +26,7 @@ export default function Header({ data, strapiUrl }) {
   };
 
   return (
-    <header className="bg-black text-white py-4 px-6 flex items-center justify-between">
+    <header className="bg-black text-white sticky top-0 z-50 py-4 px-6 flex items-center justify-between">
       {/* Left Section: Logo + Nav */}
       <div className="flex items-center space-x-6">
         {/* Logo */}
