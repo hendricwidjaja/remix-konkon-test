@@ -87,7 +87,7 @@ export default function HeroSection({
           name="email"
           placeholder="Your email"
           required
-          className="font-primary w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100"
+          className="font-primary max-w-md w-10/12 sm:w-72 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100"
           disabled={loading} // Disable input while loading
         />
         <button
