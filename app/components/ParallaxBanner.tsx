@@ -6,7 +6,7 @@ interface ParallaxBannerProps {
 export default function ParallaxBanner({ imageUrl, altText }: ParallaxBannerProps) {
   return (
     <div
-      className="w-full h-64 bg-cover bg-fixed bg-center"
+      className="w-full h-44 bg-cover bg-fixed bg-center"
       style={{ backgroundImage: `url(${imageUrl})` }}
       role="img"
       aria-label={altText || "Parallax Batman Banner"}

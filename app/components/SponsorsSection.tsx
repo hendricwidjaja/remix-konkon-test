@@ -33,7 +33,7 @@ export default function SponsorsSection({
       : "text-white"; // Default color if no match
 
   return (
-    <section className="pt-8">
+    <section id="sponsors-section" className="pt-8">
       <h2 className={`font-secondary text-3xl font-bold text-center mb-8 ${tierColor}`}>
         {tier}
       </h2>

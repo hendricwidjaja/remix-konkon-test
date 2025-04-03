@@ -96,3 +96,27 @@ export async function getLandingPageData() {
     throw error;
   }
 }
+
+export async function joinWaitlist(data: any) {
+  try {
+    const response = await fetch(strapiBaseUrl + "/api/subscribers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to join waitlist.");
+    }
+
+    const responseData = await response.json();
+    const flattenAttributesData = flattenAttributes(responseData.data);
+    return flattenAttributesData;
+  } catch (error) {
+    console.error("Error joining waitlist:", error);
+    throw new Error("Oh no! Something went wrong!");
+  }
+}

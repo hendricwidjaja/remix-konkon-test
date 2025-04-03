@@ -1,6 +1,30 @@
-import { buildImageUrl } from '~/utils/urlHelpers';
+import { buildImageUrl } from "~/utils/urlHelpers";
 
 export default function Header({ data, strapiUrl }) {
+  const handleJoinWaitlistClick = () => {
+    // Scroll to the email section
+    const emailSection = document.getElementById("email-section");
+    if (emailSection) {
+      emailSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Trigger the glow effect
+    const emailInput = document.querySelector("input[name='email']");
+    if (emailInput) {
+      emailInput.classList.add("glow-effect");
+      setTimeout(() => {
+        emailInput.classList.remove("glow-effect");
+      }, 5000); // Remove the glow effect after 5 seconds
+    }
+  };
+
+  const handleScrollToSponsors = () => {
+    const sponsorsSection = document.getElementById("sponsors-section");
+    if (sponsorsSection) {
+      sponsorsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="bg-black text-white py-4 px-6 flex items-center justify-between">
       {/* Left Section: Logo + Nav */}
@@ -18,9 +42,18 @@ export default function Header({ data, strapiUrl }) {
           <ul className="flex font-primary items-center space-x-4">
             {data.navItems.map((item) => (
               <li key={item.id}>
-                <a href={item.href} className="hover:underline">
-                  {item.label}
-                </a>
+                {item.label === "Sponsors" ? (
+                  <button
+                    onClick={handleScrollToSponsors}
+                    className="hover:underline text-white"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <a href={item.href} className="hover:underline">
+                    {item.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -46,12 +79,12 @@ export default function Header({ data, strapiUrl }) {
           ))}
         </div>
         {/* CTA Button */}
-        <a
-          href={data.cta.href}
+        <button
+          onClick={handleJoinWaitlistClick}
           className="px-4 py-1 border-[1px] border-pinkKonkon bg-black font-primary text-white hover:bg-gray-900 border-solid rounded-lg"
         >
           {data.cta.label}
-        </a>
+        </button>
       </div>
     </header>
   );
