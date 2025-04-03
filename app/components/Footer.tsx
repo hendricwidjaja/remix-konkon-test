@@ -1,6 +1,13 @@
-import { buildImageUrl } from '~/utils/urlHelpers';
+import { buildImageUrl } from "~/utils/urlHelpers";
 
 export default function Footer({ data, strapiUrl }) {
+  const handleScrollToSponsors = () => {
+    const sponsorsSection = document.getElementById("sponsors-section");
+    if (sponsorsSection) {
+      sponsorsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-black text-white py-8 px-8">
       <div className="flex flex-col md:flex-row items-center justify-between">
@@ -18,9 +25,18 @@ export default function Footer({ data, strapiUrl }) {
             <ul className="font-primary text-sm flex flex-col">
               {data.navItems.map((item) => (
                 <li key={item.id}>
-                  <a href={item.href} className="hover:underline">
-                    {item.label}
-                  </a>
+                  {item.label === "Sponsors" ? (
+                    <button
+                      onClick={handleScrollToSponsors}
+                      className="hover:underline text-white"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <a href={item.href} className="hover:underline">
+                      {item.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
