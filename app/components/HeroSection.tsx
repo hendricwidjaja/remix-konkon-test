@@ -61,11 +61,11 @@ export default function HeroSection({
 
   return (
     <section className="text-center px-6 py-12" id="email-section">
-      <h1 className="font-secondary text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-100">
+      <h1 className="font-secondary text-4xl md:text-6xl font-bold text-gray-100">
         <span className="text-pinkKonkon">{titleOne}</span>
         <span className="text-aquaKonkon">{titleTwo}</span>
       </h1>
-      <p className="font-primary mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      <p className="font-primary mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
         {description}
       </p>
       {statusMessage && (
@@ -87,7 +87,7 @@ export default function HeroSection({
           name="email"
           placeholder="Your email"
           required
-          className="font-primary max-w-md w-10/12 sm:w-72 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100"
+          className="font-primary max-w-md w-10/12 sm:w-72 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 border-gray-500 text-gray-100"
           disabled={loading} // Disable input while loading
         />
         <button
