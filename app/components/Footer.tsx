@@ -22,18 +22,18 @@ export default function Footer({ data, strapiUrl }) {
           </a>
           {/* Navigation Items */}
           <nav className="mb-4 md:mb-0">
-            <ul className="font-primary text-sm flex flex-col">
+            <ul className="font-ocr text-sm flex flex-col">
               {data.navItems.map((item) => (
                 <li key={item.id}>
                   {item.label === "Sponsors" ? (
                     <button
                       onClick={handleScrollToSponsors}
-                      className="hover:underline text-white"
+                      className="hover:text-pinkKonkon"
                     >
                       {item.label}
                     </button>
                   ) : (
-                    <a href={item.href} className="hover:underline">
+                    <a href={item.href} className="hover:text-pinkKonkon">
                       {item.label}
                     </a>
                   )}
@@ -50,12 +50,22 @@ export default function Footer({ data, strapiUrl }) {
               href={link.href}
               target={link.isExternal ? "_blank" : "_self"}
               rel="noreferrer"
+              className="group"
             >
-              <img
-                src={buildImageUrl(strapiUrl, link.image.url)}
-                alt={link.image.alternativeText || link.label}
-                className="h-5 w-5"
-              />
+              <div
+                className="h-5 w-5 bg-white group-hover:bg-pinkKonkon"
+                style={{
+                  maskImage: `url(${buildImageUrl(strapiUrl, link.image.url)})`,
+                  WebkitMaskImage: `url(${buildImageUrl(
+                    strapiUrl,
+                    link.image.url
+                  )})`,
+                  maskSize: "cover",
+                  WebkitMaskSize: "cover",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskRepeat: "no-repeat",
+                }}
+              ></div>
             </a>
           ))}
         </div>

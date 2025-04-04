@@ -6,6 +6,7 @@ import SponsorsSection from "~/components/SponsorsSection";
 import ParallaxBanner from "~/components/ParallaxBanner";
 import StoryCategoriesSection from "~/components/StoryCategoriesSection";
 import SignupBanner from "~/components/SignupBanner";
+import BorderLine from "~/components/Borderline";
 
 export const meta: MetaFunction = () => {
   return [
@@ -56,6 +57,8 @@ export default function Index() {
         description={heroBlock.description}
         submit={heroBlock.submit}
       />
+      <BorderLine color="border-pinkKonkon" marginBottom="mb-1" />
+      <BorderLine color="border-aquaKonkon" />
       {sponsorsBlock.map((block: any) => (
         <SponsorsSection
           key={block.id}
@@ -77,6 +80,8 @@ export default function Index() {
           strapiUrl={strapiUrl}
         />
       )}
+      <BorderLine color="border-pinkKonkon" marginBottom="mb-1" />
+      <BorderLine color="border-aquaKonkon" />
       {signupBannerBlock && (
         <SignupBanner
           signupLink={signupBannerBlock.signupLink}

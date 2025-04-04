@@ -39,18 +39,18 @@ export default function Header({ data, strapiUrl }) {
         </a>
         {/* Navigation Items */}
         <nav>
-          <ul className="flex font-primary items-center space-x-4">
+          <ul className="flex font-ocr items-center space-x-4">
             {data.navItems.map((item) => (
               <li key={item.id}>
                 {item.label === "Sponsors" ? (
                   <button
                     onClick={handleScrollToSponsors}
-                    className="hover:underline text-white"
+                    className="hover:text-pinkKonkon"
                   >
                     {item.label}
                   </button>
                 ) : (
-                  <a href={item.href} className="hover:underline">
+                  <a href={item.href} className="hover:text-pinkKonkon">
                     {item.label}
                   </a>
                 )}
@@ -69,19 +69,29 @@ export default function Header({ data, strapiUrl }) {
               href={link.href}
               target={link.isExternal ? "_blank" : "_self"}
               rel="noreferrer"
+              className="group"
             >
-              <img
-                src={buildImageUrl(strapiUrl, link.image.url)}
-                alt={link.image.alternativeText || link.label}
-                className="h-6 w-6"
-              />
+              <div
+                className="h-6 w-6 bg-white group-hover:bg-pinkKonkon"
+                style={{
+                  maskImage: `url(${buildImageUrl(strapiUrl, link.image.url)})`,
+                  WebkitMaskImage: `url(${buildImageUrl(
+                    strapiUrl,
+                    link.image.url
+                  )})`,
+                  maskSize: "cover",
+                  WebkitMaskSize: "cover",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskRepeat: "no-repeat",
+                }}
+              ></div>
             </a>
           ))}
         </div>
         {/* CTA Button */}
         <button
           onClick={handleJoinWaitlistClick}
-          className="px-4 py-1 border-[1px] border-pinkKonkon bg-black font-primary text-white hover:bg-gray-900 border-solid rounded-lg"
+          className="px-4 py-1 border-[1px] border-pinkKonkon bg-black font-ocr text-white hover:bg-gray-900 border-solid rounded-lg"
         >
           {data.cta.label}
         </button>

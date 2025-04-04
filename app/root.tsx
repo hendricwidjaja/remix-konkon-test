@@ -24,6 +24,14 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.cdnfonts.com/css/ocr-a-extended",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.cdnfonts.com/css/ethnocentric",
+  },
 ];
 
 export const loader: LoaderFunction = async () => {

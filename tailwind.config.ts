@@ -12,8 +12,8 @@ export default {
         bronzeKonkon: '#CD7F32'
       },
       fontFamily: {
-        primary: ['"OCR A Extended"', 'sans-serif'], 
-        secondary: ['"ETHNOCENTRIC"', 'sans-serif'],   
+        'ocr': ['"OCR A Extended"', 'monospace'], 
+        'ethnocentric': ['Ethnocentric Rg', 'sans-serif'],   
         sans: [
           "Inter",
           "ui-sans-serif",

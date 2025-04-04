@@ -23,7 +23,7 @@ export default function StoryCategoriesSection({
 }: StoryCategoriesSectionProps) {
   return (
     <section className="py-12 max-w-6xl w-5/6 mx-auto">
-      <h2 className="font-secondary text-3xl font-bold text-center mb-12">{heading}</h2>
+      <h2 className="font-ethnocentric text-3xl font-bold text-center mb-12">{heading}</h2>
       <div className="space-y-12">
         {categories.map((category, index) => (
           <div
@@ -38,8 +38,8 @@ export default function StoryCategoriesSection({
               className="w-full md:w-1/2 rounded-lg shadow-lg"
             />
             <div className="md:w-1/2 text-center md:text-left">
-              <h3 className="font-primary text-2xl font-bold underline mb-4">{category.heading}</h3>
-              <p className="font-primary text-gray-600">{category.description}</p>
+              <h3 className="font-ocr text-2xl font-bold underline mb-4">{category.heading}</h3>
+              <p className="font-ocr text-gray-600">{category.description}</p>
             </div>
           </div>
         ))}
