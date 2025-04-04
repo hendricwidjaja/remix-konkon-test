@@ -9,19 +9,22 @@ body {
 
 /* Glow effect with breathing animation */
 @keyframes breathe-glow {
-  0%, 50% {
+  0% {
+    box-shadow: 0 0 0px 0px #63dddd74, 0 0 0px 0px #63dddd74;
+  }
+  50% {
     box-shadow: 0 0 5px 2px #63DCDD, 0 0 10px 4px #63DCDD;
   }
   25%, 75% {
     box-shadow: 0 0 10px 4px #63DCDD, 0 0 20px 8px #63DCDD;
   }
   100% {
-    box-shadow: 0 0 1px 1px #63dddd74, 0 0 2px 2px #63dddd74;
+    box-shadow: 0 0 0px 0px #63dddd74, 0 0 0px 0px #63dddd74;
   }
 }
 
 .glow-effect {
-  animation: breathe-glow 5s ease-in-out;
+  animation: breathe-glow 3.5s ease-in-out;
 }
 
 .loader {
