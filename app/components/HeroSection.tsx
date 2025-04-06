@@ -61,7 +61,7 @@ export default function HeroSection({
 
   return (
     <section className="text-center px-6 py-32" id="email-section">
-      <h1 className="font-ethnocentric text-4xl md:text-8xl font-bold text-gray-100">
+      <h1 className="font-ethnocentric text-5xl md:text-8xl font-bold text-gray-100">
         <span className="text-pinkKonkon">{titleOne}</span>
         <span className="text-aquaKonkon">{titleTwo}</span>
       </h1>

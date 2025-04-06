@@ -10,6 +10,7 @@ import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 import { getGlobalData } from "./data.server";
 import Header from "~/components/Header"; // Import the Header component
 import Footer from "~/components/Footer"; // Import the Footer component
+import ErrorBoundaryContent from "~/components/ErrorBoundaryContent";
 
 import "./tailwind.css";
 
@@ -40,6 +41,10 @@ export const loader: LoaderFunction = async () => {
   return Response.json({ globalData, strapiUrl });
 };
 
+export function ErrorBoundary({ error }: { error: Error }) {
+  return <ErrorBoundaryContent error={error} />;
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -67,7 +72,7 @@ export default function App() {
   return (
     <Layout>
       <Header data={globalData.header} strapiUrl={strapiUrl} />
-        <Outlet />
+      <Outlet />
       <Footer data={globalData.footer} strapiUrl={strapiUrl} />
     </Layout>
   );

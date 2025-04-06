@@ -23,7 +23,7 @@ export default function StoryCategoriesSection({
 }: StoryCategoriesSectionProps) {
   return (
     <section className="py-12 max-w-6xl w-5/6 mx-auto">
-      <h2 className="font-ethnocentric text-3xl font-bold text-center mb-12">{heading}</h2>
+      <h2 className="font-ethnocentric text-5xl font-bold text-center py-12 mb-12">{heading}</h2>
       <div className="space-y-12">
         {categories.map((category, index) => (
           <div

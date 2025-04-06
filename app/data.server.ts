@@ -88,7 +88,6 @@ export async function getLandingPageData() {
 
     // Flatten the data returned by Strapi
     const landingPageData = flattenAttributes(data.data);
-    console.dir(landingPageData, { depth: null });
 
     return landingPageData;
   } catch (error) {
@@ -118,5 +117,21 @@ export async function joinWaitlist(data: any) {
   } catch (error) {
     console.error("Error joining waitlist:", error);
     throw new Error("Oh no! Something went wrong!");
+  }
+}
+
+export async function getSponsors() { 
+  try {
+    const response = await fetch(strapiBaseUrl + "/api/sponsors-page");
+    const data = await response.json();
+
+    // Flatten the data returned by Strapi
+    const sponsorsData = flattenAttributes(data.data);
+    console.dir(sponsorsData, { depth: null });
+
+    return sponsorsData;
+  } catch (error) {
+    console.error("Error fetching sponsors data", error);
+    throw error;
   }
 }
