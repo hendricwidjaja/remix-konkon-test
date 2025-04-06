@@ -1,23 +1,21 @@
 import { buildImageUrl } from "~/utils/urlHelpers";
+import { scrollToSection } from "~/utils/scrollHelpers";
 
 export default function Footer({ data, strapiUrl }) {
   const handleScrollToSponsors = () => {
-    const sponsorsSection = document.getElementById("sponsors-section");
-    if (sponsorsSection) {
-      sponsorsSection.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection("sponsors-section", 100); // Adjust offset to match navbar height
   };
 
   return (
     <footer className="bg-black text-white py-8 px-8">
-      <div className="flex flex-col md:flex-row items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-10">
+        <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-10">
           <a href={data.logo.href} className="flex items-center mb-4 md:mb-0">
             <img
               src={buildImageUrl(strapiUrl, data.logo.image.url)}
               alt={data.logo.image.alternativeText || data.logo.label}
-              className="h-16 w-auto"
+              className="h-40 sm:h-16 w-auto"
             />
           </a>
           {/* Navigation Items */}
@@ -43,7 +41,7 @@ export default function Footer({ data, strapiUrl }) {
           </nav>
         </div>
         {/* Social Links */}
-        <div className="flex items-center space-x-4 self-start pt-2">
+        <div className="flex items-center space-x-4 sm:self-start pt-2">
           {data.socialLinks.map((link) => (
             <a
               key={link.id}

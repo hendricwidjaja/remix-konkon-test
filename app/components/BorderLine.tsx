@@ -5,6 +5,6 @@ interface BorderLineProps {
   
   export default function BorderLine({ color, marginBottom = "" }: BorderLineProps) {
     return (
-      <div className={`border-t-[1px] ${color} ${marginBottom}`}></div>
+      <div className={`border-t ${color} ${marginBottom}`}></div>
     );
   }

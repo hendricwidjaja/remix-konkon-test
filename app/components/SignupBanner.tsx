@@ -31,12 +31,12 @@ export default function SignupBanner({ signupLink, logoLink }: SignupBannerProps
   };
 
   return (
-    <section className="py-24 bg-black text-white text-center">
+    <section className="pt-16 sm:py-24 bg-black text-white text-center">
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
         <a
           href={signupLink.href}
           onClick={handleSignupClick} // Attach the click handler
-          className="text-5xl font-ethnocentric font-bold"
+          className="text-3xl sm:text-5xl font-ethnocentric font-bold"
         >
           {signupLink.label}
         </a>
@@ -44,7 +44,7 @@ export default function SignupBanner({ signupLink, logoLink }: SignupBannerProps
           <img
             src={logoLink.imageUrl}
             alt={logoLink.altText || "KonKon.AI Logo"}
-            className="h-28 w-auto"
+            className="hidden sm:flex h-20 sm:h-28 w-auto"
           />
         </a>
       </div>

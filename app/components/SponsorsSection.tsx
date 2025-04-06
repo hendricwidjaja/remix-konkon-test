@@ -34,7 +34,7 @@ export default function SponsorsSection({
 
   return (
     <section id="sponsors-section" className="pt-9">
-      <h2 className={`font-ethnocentric text-3xl font-bold text-center mb-8 ${tierTextColor}`}>
+      <h2 className={`font-ethnocentric medium-heading font-bold text-center mb-8 ${tierTextColor}`}>
         {tier}
       </h2>
       {/* Rectangle encapsulating all sponsors */}
