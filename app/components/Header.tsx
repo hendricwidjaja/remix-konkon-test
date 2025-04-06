@@ -123,7 +123,7 @@ export default function Header({
             onClick={(e) => e.stopPropagation()}
           >
             <nav>
-              <ul className="flex flex-col items-center space-y-4">
+              <ul className="flex flex-col items-center space-y-4 text-2xl font-ocr">
                 {data.navItems.map((item: any) => (
                   <li key={item.id}>
                     {item.label === "Sponsors" ? (
