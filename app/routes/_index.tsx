@@ -1,7 +1,7 @@
 import type { MetaFunction, LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getLandingPageData } from "~/data.server";
-import HeroSection from "~/components/HeroSection";
+import Hero from "~/components/Hero";
 import SponsorsSection from "~/components/SponsorsSection";
 import ParallaxBanner from "~/components/ParallaxBanner";
 import StoryCategoriesSection from "~/components/StoryCategoriesSection";
@@ -51,7 +51,7 @@ export default function Index() {
 
   return (
     <div>
-      <HeroSection
+      <Hero
         titleOne={heroBlock.titleOne}
         titleTwo={heroBlock.titleTwo}
         description={heroBlock.description}

@@ -7,7 +7,7 @@ export default function Footer({ data, strapiUrl }) {
   };
 
   return (
-    <footer className="bg-black text-white py-8 px-8">
+    <footer className="bg-black text-white py-8 px-16">
       <div className="flex flex-col sm:flex-row items-center justify-between">
         {/* Logo */}
         <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-10">
@@ -15,7 +15,7 @@ export default function Footer({ data, strapiUrl }) {
             <img
               src={buildImageUrl(strapiUrl, data.logo.image.url)}
               alt={data.logo.image.alternativeText || data.logo.label}
-              className="h-40 sm:h-16 w-auto"
+              className="h-32 sm:h-16 w-auto"
             />
           </a>
           {/* Navigation Items */}

@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-interface HeroSectionProps {
+interface HeroProps {
   titleOne: string;
   titleTwo: string;
   description: string;
@@ -10,12 +10,12 @@ interface HeroSectionProps {
   };
 }
 
-export default function HeroSection({
+export default function Hero({
   titleOne,
   titleTwo,
   description,
   submit,
-}: HeroSectionProps) {
+}: HeroProps) {
   const emailInputRef = useRef<HTMLInputElement>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [isError, setIsError] = useState<boolean>(false);
@@ -60,7 +60,7 @@ export default function HeroSection({
   };
 
   return (
-    <section className="text-center px-6 py-32" id="email-section">
+    <section className="text-center px-6 py-16 sm:py-32" id="email-section">
       <h1 className="responsive-heading font-ethnocentric large-heading font-bold text-gray-100">
         <span className="text-pinkKonkon">{titleOne}</span>
         <span className="text-aquaKonkon">{titleTwo}</span>

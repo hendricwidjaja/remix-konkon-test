@@ -27,10 +27,10 @@ export default function sponsorsPage() {
 
   return (
     <div>
-      <h1 className="font-ethnocentric text-5xl font-bold text-center mt-20">
+      <h1 className="font-ethnocentric text-2xl sm:text-4xl w-5/6 mx-auto font-bold text-center mt-20">
         {heading}
       </h1>
-      <p className="font-ocr text-lg md:text-xl text-gray-300 max-w-2xl mx-auto my-20">
+      <p className="font-ocr text-md sm:text-lg text-center text-gray-300 max-w-2xl w-5/6 mx-auto my-20">
         {description}
       </p>
       <BorderLine color="border-pinkKonkon" marginBottom="mb-1" />

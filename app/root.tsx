@@ -8,7 +8,7 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 import { getGlobalData } from "./data.server";
-import Header from "~/components/Header"; // Import the Header component
+import Navbar from "./components/navbar";
 import Footer from "~/components/Footer"; // Import the Footer component
 import ErrorBoundaryContent from "~/components/ErrorBoundaryContent";
 
@@ -71,7 +71,7 @@ export default function App() {
 
   return (
     <Layout>
-      <Header data={globalData.header} strapiUrl={strapiUrl} />
+      <Navbar data={globalData.header} strapiUrl={strapiUrl} />
       <Outlet />
       <Footer data={globalData.footer} strapiUrl={strapiUrl} />
     </Layout>

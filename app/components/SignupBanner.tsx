@@ -1,3 +1,5 @@
+import { scrollToSection } from "~/utils/scrollHelpers";
+
 interface SignupBannerProps {
   signupLink: {
     href: string;
@@ -15,10 +17,7 @@ export default function SignupBanner({ signupLink, logoLink }: SignupBannerProps
     event.preventDefault(); // Prevent default link behavior
 
     // Scroll to the email section
-    const emailSection = document.getElementById("email-section");
-    if (emailSection) {
-      emailSection.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection("email-section", 100); // Adjust offset to match navbar height
 
     // Trigger the glow effect on the email input
     const emailInput = document.querySelector("input[name='email']");
@@ -44,7 +43,7 @@ export default function SignupBanner({ signupLink, logoLink }: SignupBannerProps
           <img
             src={logoLink.imageUrl}
             alt={logoLink.altText || "KonKon.AI Logo"}
-            className="hidden sm:flex h-20 sm:h-28 w-auto"
+            className="hidden sm:flex h-20 sm:h-32 w-auto"
           />
         </a>
       </div>

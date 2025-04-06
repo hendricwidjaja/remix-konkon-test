@@ -3,7 +3,7 @@ import { scrollToSection } from "~/utils/scrollHelpers";
 import { useState } from "react";
 import { GrAdd } from "react-icons/gr";
 
-export default function Header({
+export default function Navbar({
   data,
   strapiUrl,
 }: {
@@ -18,7 +18,7 @@ export default function Header({
 
   const handleJoinWaitlistClick = () => {
     // Scroll to the email section
-    scrollToSection("email-section", 0); // Adjust offset to match navbar height
+    scrollToSection("email-section", 100); // Adjust offset to match navbar height
 
     // Trigger the glow effect
     const emailInput = document.querySelector("input[name='email']");
